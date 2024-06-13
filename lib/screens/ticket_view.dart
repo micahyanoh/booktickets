@@ -2,6 +2,7 @@ import 'package:booktickets/utils/app_layout.dart';
 import 'package:booktickets/utils/app_styles.dart';
 import 'package:booktickets/widgets/thick_container.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 
 class TicketView extends StatelessWidget {
@@ -11,10 +12,10 @@ class TicketView extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = AppLayout.getSize(context);
     return SizedBox(
-      width: size.width,
+      width: size.width * 0.85,
       height: 200,
       child: Container(
-        margin: const EdgeInsets.only(left: 16),
+        margin: const EdgeInsets.only(right: 16),
         child: Column(
           children: [
             /*SHOWNG THE BLUE PART OF THE CARD/TICKET*/
@@ -126,9 +127,9 @@ class TicketView extends StatelessWidget {
                                 topRight: Radius.circular(10),
                                 bottomRight: Radius.circular(10)))),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: Expanded(
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.all(12.0),
                       child: LayoutBuilder(
                         builder:
                             (BuildContext context, BoxConstraints constraints) {
@@ -159,6 +160,73 @@ class TicketView extends StatelessWidget {
                             borderRadius: BorderRadius.only(
                                 topLeft: Radius.circular(10),
                                 bottomLeft: Radius.circular(10)))),
+                  )
+                ],
+              ),
+            ),
+            /*bottom card of the container*/
+            Container(
+              decoration: BoxDecoration(
+                  color: Styles.orangeColor,
+                  borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(21),
+                      bottomRight: Radius.circular(21))),
+              padding: const EdgeInsets.only(
+                  left: 16, top: 10, right: 16, bottom: 16),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            '1 MAY',
+                            style: Styles.headLinestyle3
+                                .copyWith(color: Colors.white),
+                          ),
+                          const Gap(5),
+                          Text(
+                            'Date',
+                            style: Styles.headLinestyle4
+                                .copyWith(color: Colors.white),
+                          )
+                        ],
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text(
+                            '08:30 AM',
+                            style: Styles.headLinestyle3
+                                .copyWith(color: Colors.white),
+                          ),
+                          const Gap(5),
+                          Text(
+                            'Departure time',
+                            style: Styles.headLinestyle4
+                                .copyWith(color: Colors.white),
+                          )
+                        ],
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Text(
+                            '23',
+                            style: Styles.headLinestyle3
+                                .copyWith(color: Colors.white),
+                          ),
+                          const Gap(5),
+                          Text(
+                            'Number',
+                            style: Styles.headLinestyle4
+                                .copyWith(color: Colors.white),
+                          )
+                        ],
+                      )
+                    ],
                   )
                 ],
               ),
