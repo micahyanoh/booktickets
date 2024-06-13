@@ -116,7 +116,7 @@ class TicketView extends StatelessWidget {
               color: Styles.orangeColor,
               child: Row(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                     width: 10,
                     child: DecoratedBox(
@@ -126,28 +126,31 @@ class TicketView extends StatelessWidget {
                                 topRight: Radius.circular(10),
                                 bottomRight: Radius.circular(10)))),
                   ),
-                  Expanded(
-                    child: LayoutBuilder(
-                      builder:
-                          (BuildContext context, BoxConstraints constraints) {
-                        return Flex(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          mainAxisSize: MainAxisSize.max,
-                          direction: Axis.horizontal,
-                          children: List.generate(
-                              (constraints.constrainWidth() / 15).floor(),
-                              (index) => const SizedBox(
-                                    width: 5,
-                                    height: 1,
-                                    child: DecoratedBox(
-                                        decoration:
-                                            BoxDecoration(color: Colors.white)),
-                                  )),
-                        );
-                      },
+                  Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: Expanded(
+                      child: LayoutBuilder(
+                        builder:
+                            (BuildContext context, BoxConstraints constraints) {
+                          return Flex(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            mainAxisSize: MainAxisSize.max,
+                            direction: Axis.horizontal,
+                            children: List.generate(
+                                (constraints.constrainWidth() / 15).floor(),
+                                (index) => const SizedBox(
+                                      width: 5,
+                                      height: 1,
+                                      child: DecoratedBox(
+                                          decoration: BoxDecoration(
+                                              color: Colors.white)),
+                                    )),
+                          );
+                        },
+                      ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                     width: 10,
                     child: DecoratedBox(
