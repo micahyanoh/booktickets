@@ -2,6 +2,7 @@ import 'package:booktickets/utils/app_layout.dart';
 import 'package:booktickets/utils/app_styles.dart';
 import 'package:booktickets/widgets/thick_container.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 class TicketView extends StatelessWidget {
   const TicketView({super.key});
@@ -77,6 +78,32 @@ class TicketView extends StatelessWidget {
                         'LDN',
                         style:
                             Styles.headLinestyle3.copyWith(color: Colors.white),
+                      )
+                    ],
+                  ),
+                  const Gap(3),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      SizedBox(
+                        width: 100,
+                        child: Text(
+                          'New-York',
+                          style: Styles.headLinestyle4
+                              .copyWith(color: Colors.white),
+                        ),
+                      ),
+                      Text(
+                        '8H 30M',
+                        style:
+                            Styles.headLinestyle4.copyWith(color: Colors.white),
+                      ),
+                      SizedBox(
+                        width: 100,
+                        child: Text('London',
+                            textAlign: TextAlign.end,
+                            style: Styles.headLinestyle4
+                                .copyWith(color: Colors.white)),
                       )
                     ],
                   )
