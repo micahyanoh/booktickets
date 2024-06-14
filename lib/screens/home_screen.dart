@@ -1,3 +1,4 @@
+import 'package:booktickets/screens/hotel_screens.dart';
 import 'package:booktickets/screens/ticket_view.dart';
 import 'package:booktickets/utils/app_styles.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
@@ -84,7 +85,7 @@ class HomeScreen extends StatelessWidget {
                         print('you are tapped');
                       },
                       child: Text(
-                        'View All',
+                        'View all',
                         style: Styles.textStyle
                             .copyWith(color: Styles.primaryColor),
                       ),
@@ -95,7 +96,7 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           const Gap(15),
-          SingleChildScrollView(
+          const SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             padding: EdgeInsets.only(left: 20),
             child: Row(
@@ -104,7 +105,38 @@ class HomeScreen extends StatelessWidget {
                 TicketView(),
               ],
             ),
-          )
+          ),
+          const Gap(15),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Hotels',
+                  style: Styles.headLinestyle2,
+                ),
+                InkWell(
+                  onTap: () {
+                    print('you are tapped');
+                  },
+                  child: Text(
+                    'View all',
+                    style:
+                        Styles.textStyle.copyWith(color: Styles.primaryColor),
+                  ),
+                )
+              ],
+            ),
+          ),
+          const Gap(20),
+          const SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            padding: EdgeInsets.only(left: 20),
+            child: Row(
+              children: [HotelScreens(), HomeScreen()],
+            ),
+          ),
         ],
       ),
     );
