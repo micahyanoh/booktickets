@@ -1,5 +1,6 @@
 import 'package:booktickets/utils/app_layout.dart';
 import 'package:booktickets/utils/app_styles.dart';
+import 'package:booktickets/widgets/double_text_widget.dart';
 import 'package:booktickets/widgets/icon_text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -54,7 +55,7 @@ class SearchScreen extends StatelessWidget {
                           BorderRadius.horizontal(right: Radius.circular(50)),
                       color: Colors.transparent,
                     ),
-                    child: const Center(child: Text('AirLine tickets')),
+                    child: const Center(child: Text('Hotels')),
                   )
                 ],
               ),
@@ -78,6 +79,18 @@ class SearchScreen extends StatelessWidget {
               ),
             ),
           ),
+          const Gap(40),
+          const AppDoubleTextWidget(
+              bigText: 'Upcoming Flights', smallText: 'View all'),
+          Row(
+            children: [
+              Container(
+                child: Column(
+                  children: [],
+                ),
+              )
+            ],
+          )
         ],
       ),
     );
