@@ -1,6 +1,8 @@
 import 'package:booktickets/utils/app_layout.dart';
 import 'package:booktickets/utils/app_styles.dart';
+import 'package:booktickets/widgets/layout_builder_widget.dart';
 import 'package:booktickets/widgets/thick_container.dart';
+
 import 'package:flutter/material.dart';
 
 import 'package:gap/gap.dart';
@@ -15,7 +17,7 @@ class TicketView extends StatelessWidget {
     final size = AppLayout.getSize(context);
     return SizedBox(
       width: size.width * 0.85,
-      height: 200,
+      height: 179,
       child: Container(
         margin: const EdgeInsets.only(right: 16),
         child: Column(
@@ -23,8 +25,9 @@ class TicketView extends StatelessWidget {
             /*SHOWNG THE BLUE PART OF THE CARD/TICKET*/
             Container(
               decoration: BoxDecoration(
-                  color: isColor == null ? Color(0xFF526799) : Colors.white,
-                  borderRadius: BorderRadius.only(
+                  color:
+                      isColor == null ? const Color(0xFF526799) : Colors.white,
+                  borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(21),
                       topRight: Radius.circular(21))),
               padding: const EdgeInsets.all(16),
@@ -48,29 +51,9 @@ class TicketView extends StatelessWidget {
                       Expanded(
                           child: Stack(
                         children: [
-                          SizedBox(
-                            height: 24,
-                            child: LayoutBuilder(
-                              builder: (BuildContext context,
-                                  BoxConstraints constraint) {
-                                return Flex(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    mainAxisSize: MainAxisSize.max,
-                                    direction: Axis.horizontal,
-                                    children: List.generate(
-                                      (constraint.constrainWidth() / 6).floor(),
-                                      (index) => const SizedBox(
-                                        width: 3,
-                                        height: 4,
-                                        child: DecoratedBox(
-                                            decoration: BoxDecoration(
-                                                color: Colors.white)),
-                                      ),
-                                    ));
-                              },
-                            ),
-                          ),
+                          const SizedBox(
+                              height: 24,
+                              child: AppLayoutBuilderWidget(sections: 6)),
                           Center(
                             child: Transform.rotate(
                               angle: 1.5,
@@ -192,9 +175,9 @@ class TicketView extends StatelessWidget {
             Container(
               decoration: BoxDecoration(
                   color: isColor == null ? Styles.orangeColor : Colors.white,
-                  borderRadius: const BorderRadius.only(
-                      bottomLeft: Radius.circular(21),
-                      bottomRight: Radius.circular(21))),
+                  borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(isColor == null ? 21 : 0),
+                      bottomRight: Radius.circular(isColor == null ? 21 : 0))),
               padding: const EdgeInsets.only(
                   left: 16, top: 10, right: 16, bottom: 16),
               child: Column(

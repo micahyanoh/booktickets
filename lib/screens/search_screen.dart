@@ -79,7 +79,7 @@ class SearchScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              Spacer(),
+              const Spacer(),
               Column(
                 children: [
                   Stack(
@@ -145,7 +145,7 @@ class SearchScreen extends StatelessWidget {
                         ),
                         const Gap(5),
                         RichText(
-                            text: TextSpan(children: [
+                            text: const TextSpan(children: [
                           TextSpan(text: '😍', style: TextStyle(fontSize: 28)),
                           TextSpan(text: '🥰', style: TextStyle(fontSize: 40)),
                           TextSpan(text: '😘', style: TextStyle(fontSize: 28))
