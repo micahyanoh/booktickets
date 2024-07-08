@@ -46,9 +46,11 @@ class HomeScreen extends StatelessWidget {
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           image: const DecorationImage(
-                              fit: BoxFit.cover,
-                              image: AssetImage(
-                                  "assets/images/adventist-symbol--denim.png"))),
+                            fit: BoxFit.contain,
+                            image: AssetImage(
+                              "assets/images/ABNB_BIG.png",
+                            ),
+                          )),
                     )
                   ],
                 ),
